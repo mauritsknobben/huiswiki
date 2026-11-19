@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Vraagt zoekmachines om deze site niet op te nemen. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Huiswiki</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#1d4f91">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="kop">
+    <div class="kop-binnen">
+      <h1 class="tape">Huiswiki</h1>
+      <label class="zoekvak">
+        <span class="verborgen">Zoeken</span>
+        <input id="zoek" type="search" placeholder="Zoek, bijv. RAL 9010"
+               autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+      </label>
+    </div>
+  </header>
+
+  <main class="inhoud">
+    <div id="meldingen"></div>
+
+    <section id="aandacht" class="aandacht" aria-live="polite">
+      <p class="rustig">Gegevens laden…</p>
+    </section>
+
+    <nav id="filters" class="filters" aria-label="Filters" hidden>
+      <div class="filterrij">
+        <span class="filternaam">Ruimte</span>
+        <div class="chips" id="filter-ruimte"></div>
+      </div>
+      <div class="filterrij">
+        <span class="filternaam">Categorie</span>
+        <div class="chips" id="filter-categorie"></div>
+      </div>
+    </nav>
+
+    <div id="resultaten"></div>
+  </main>
+
+  <footer class="voet">
+    <p id="bewerken"></p>
+    <p id="geladen" class="rustig"></p>
+  </footer>
+
+  <!-- Leest de YAML-bestanden. Lukt dat niet, dan probeert app.js een reservekopie. -->
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="logica.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

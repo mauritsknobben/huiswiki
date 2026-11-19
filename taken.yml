@@ -1,0 +1,68 @@
+# ==============================================================
+#  HUISWIKI · taken.yml · terugkerende klusjes
+# ==============================================================
+#
+#  Elke taak heeft deze velden:
+#
+#  id             Een vaste, unieke naam voor de agenda.
+#                 Alleen kleine letters, cijfers en streepjes.
+#                 Verander hem niet meer als de taak eenmaal in
+#                 je agenda staat (fase 2), anders krijg je een
+#                 tweede afspraak.
+#  taak           Wat je moet doen.
+#  interval       Hoe vaak. Schrijf het zoals je het zou zeggen:
+#                   elke week, elke 2 weken, elke maand,
+#                   elke 3 maanden, elk half jaar, elk jaar,
+#                   elke 2 jaar, elk jaar in oktober
+#  laatst_gedaan  Wanneer je het voor het laatst deed,
+#                 bijvoorbeeld 2025-10-14 of 14-10-2025.
+#  ruimte         Mag je weglaten. Waar de taak bij hoort.
+#  notitie        Mag je weglaten. Handige extra informatie.
+#
+#  De volgende keer is: laatst gedaan + interval.
+#  - Bij "elk jaar in oktober" is dat 1 oktober, en wel de
+#    eerstvolgende die minstens een half jaar na laatst gedaan valt.
+#  - Bij een maandelijkse taak op de 29e, 30e of 31e wordt het
+#    de 28e, zodat hij ook in februari terugkomt.
+#
+#  Klusje gedaan? Zet de datum van vandaag bij laatst_gedaan
+#  en klik op "Commit changes".
+# ==============================================================
+
+# Hoeveel dagen van tevoren een taak bovenaan de site verschijnt:
+binnenkort_dagen: 14
+
+taken:
+
+  - id: cv-ketel-onderhoud
+    taak: Cv-ketel laten onderhouden
+    interval: elk jaar in november
+    laatst_gedaan: 2025-11-12
+    ruimte: Algemeen
+    notitie: Afspraak maken bij het installatiebedrijf.
+
+  - id: radiatoren-ontluchten
+    taak: Radiatoren ontluchten
+    interval: elk jaar
+    laatst_gedaan: 2025-11-25
+    ruimte: Algemeen
+    notitie: De ontluchtingssleutel ligt in de meterkast. Controleer daarna de waterdruk van de cv-ketel.
+
+  - id: rookmelders-testen
+    taak: Rookmelders testen
+    interval: elke maand
+    laatst_gedaan: 2026-11-01
+    ruimte: [Hal, Slaapkamer]
+
+  - id: matras-omdraaien
+    taak: Matras omdraaien en keren
+    interval: elke 3 maanden
+    laatst_gedaan: 2026-10-01
+    ruimte: Slaapkamer
+
+  - id: koffie-waterfilter
+    taak: Waterfilter koffieapparaat vervangen
+    interval: elke 2 maanden
+    laatst_gedaan: 2026-10-20
+    ruimte: Keuken
+    notitie: AquaClean-filter (CA6903). Zie Apparaten, Koffieapparaat.

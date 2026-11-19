@@ -1,0 +1,202 @@
+# ==============================================================
+#  HUISWIKI · huis.yml · alle naslag over het huis
+# ==============================================================
+#
+#  Zo werkt dit bestand:
+#  - Regels die met # beginnen zijn uitleg. De website slaat ze over.
+#  - Inspringen doe je met SPATIES, 2 per niveau. Geen Tab.
+#  - Een nieuw item begint met een streepje en een spatie: "- ".
+#  - Na de naam van een veld komt een dubbele punt en een spatie:
+#        merk: Flexa
+#  - Begint je tekst met een # of staat er een dubbele punt met
+#    een spatie in, zet de tekst dan tussen aanhalingstekens:
+#        notitie: "Let op: eerst grondverf"
+#  - Datums schrijf je als 2024-04-20 of 20-04-2024.
+#  - Je mag zelf velden verzinnen, bijvoorbeeld liters_nodig: 2,5
+#    Een liggend streepje wordt op de site een spatie.
+#  - Drie velden zijn speciaal: titel, ruimte en notitie.
+#    Hoort iets bij meer ruimtes? Gebruik blokhaken:
+#        ruimte: [Keuken, Hal]
+#  - Een lange notitie over meer regels? Zet een | achter
+#    notitie: en spring de regels eronder 2 spaties verder in.
+#
+#  LET OP: deze website is openbaar. Zet hier geen adres,
+#  alarmcodes of wachtwoorden in.
+# ==============================================================
+
+ruimtes:
+  - Keuken
+  - Woonkamer
+  - WC
+  - Badkamer
+  - Hal
+  - Werkkamer
+  - Slaapkamer
+  - Logeerkamer
+  - Algemeen        # voor dingen die bij het hele huis horen
+
+categorieen:
+
+  # ------------------------------------------------------------
+  - naam: Elektra
+    items:
+
+      - titel: Meterkast
+        ruimte: Hal
+        hoofdschakelaar: Rechts bovenin
+        aantal_groepen: 4
+        aardlekschakelaars: 2 (A en B)
+        notitie: De groepen zijn van links naar rechts genummerd.
+
+      - titel: Groep 1, stopcontacten keuken
+        ruimte: Keuken
+        groep: 1
+        aardlekschakelaar: A
+        zekering: 16 A
+        wat: Stopcontacten boven het aanrecht en de koelkast
+
+      - titel: Groep 2, kookplaat
+        ruimte: Keuken
+        groep: 2
+        aardlekschakelaar: A
+        zekering: 2 × 16 A (perilex)
+        wat: Inductiekookplaat
+
+      - titel: Groep 3, woonkamer, hal en wc
+        ruimte: [Woonkamer, Hal, WC]
+        groep: 3
+        aardlekschakelaar: B
+        zekering: 16 A
+        wat: Verlichting en stopcontacten
+
+      - titel: Groep 4, boven
+        ruimte: [Badkamer, Werkkamer, Slaapkamer, Logeerkamer]
+        groep: 4
+        aardlekschakelaar: B
+        zekering: 16 A
+        wat: Verlichting en stopcontacten
+
+      - titel: Stopcontacten
+        ruimte: Algemeen
+        type: Randaarde (type F), inbouw
+        kleur: Wit
+        notitie: In de keuken zitten twee dubbele stopcontacten met USB.
+
+      - titel: Lampfittingen woonkamer
+        ruimte: Woonkamer
+        plafondlamp: E27
+        leeslamp: E14
+        lichtkleur: 2700 K (warm wit)
+
+      - titel: Spotjes badkamer
+        ruimte: Badkamer
+        fitting: GU10
+        aantal: 4
+        notitie: Spatwaterdicht (IP44).
+
+  # ------------------------------------------------------------
+  - naam: Verf
+    items:
+
+      - titel: Woonkamer, muren
+        ruimte: Woonkamer
+        merk: Flexa
+        soort: Muurverf
+        kleurnaam: Zuiver wit
+        kleurcode: RAL 9010
+        glansgraad: Mat
+        geschilderd_op: 2024-04-20
+        notitie: Twee lagen. Er staat nog een halve pot in de werkkamerkast.
+
+      - titel: Slaapkamer, accentmuur
+        ruimte: Slaapkamer
+        merk: Histor
+        soort: Muurverf
+        kleurnaam: Saliegroen (voorbeeld)
+        kleurcode: NCS S 3010-G30Y
+        glansgraad: Mat
+        geschilderd_op: 2025-02-08
+
+      - titel: Kozijnen en deuren binnen
+        ruimte: [Hal, Woonkamer, Keuken]
+        merk: Sikkens
+        soort: Lak op waterbasis
+        kleurnaam: Crèmewit
+        kleurcode: RAL 9001
+        glansgraad: Zijdeglans
+        geschilderd_op: 2023-09-16
+
+  # ------------------------------------------------------------
+  - naam: Apparaten
+    items:
+
+      - titel: Oven
+        ruimte: Keuken
+        merk: Bosch
+        model: VOORBEELD-OV100
+        serienummer: VOORBEELD-0001
+        aankoopdatum: 2023-06-12
+        garantie_tot: 2025-06-12
+        handleiding: https://www.example.com/handleiding-oven.pdf
+        notitie: Pyrolyse-reiniging duurt 2 uur. De deur blijft dan op slot.
+
+      - titel: Koffieapparaat
+        ruimte: Keuken
+        merk: Philips
+        model: VOORBEELD-EP2000
+        serienummer: VOORBEELD-0002
+        aankoopdatum: 2025-01-20
+        garantie_tot: 2027-01-20
+        handleiding: https://www.example.com/handleiding-koffie.pdf
+        onderdelen:
+          - AquaClean-waterfilter (CA6903)
+          - Ontkalker (CA6700)
+
+      - titel: Magnetron
+        ruimte: Keuken
+        merk: Samsung
+        model: VOORBEELD-MS23
+        aankoopdatum: 2022-11-05
+        garantie_tot: 2024-11-05
+
+      - titel: Cv-ketel
+        ruimte: Algemeen
+        merk: Intergas
+        model: VOORBEELD-CW5
+        serienummer: VOORBEELD-0003
+        installatiedatum: 2021-10-01
+        waterdruk: Tussen 1,5 en 2 bar
+        handleiding: https://www.example.com/handleiding-cv.pdf
+        onderdelen:
+          - Vulslang (ligt naast de ketel)
+        notitie: Hangt in de kast op de overloop.
+
+  # ------------------------------------------------------------
+  - naam: Notities
+    items:
+
+      - titel: Hoofdkraan water
+        ruimte: Hal
+        notitie: In de meterkast, linksonder. Dichtdraaien met de klok mee.
+
+      - titel: Leidingen in de muur
+        ruimte: Werkkamer
+        notitie: |
+          Achter het bureau loopt een stroomleiding van het
+          stopcontact recht omhoog naar het plafond.
+          Niet boren tussen 30 en 60 cm links van het stopcontact.
+
+# ==============================================================
+#  NIEUWE CATEGORIE?
+#  Haal bij de regels van het voorbeeld hieronder alleen het hekje
+#  (#) weg. De spaties die overblijven zijn dan precies goed.
+#  Wil je nog een categorie? Kopieer het blok en pas het aan.
+#
+#  - naam: Sanitair
+#    items:
+#
+#      - titel: Kraan badkamer
+#        ruimte: Badkamer
+#        merk: Grohe
+#        straalregelaar: M24
+# ==============================================================
